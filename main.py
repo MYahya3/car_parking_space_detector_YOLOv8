@@ -83,7 +83,7 @@ try:
             else:
                 label_detection(frame=frame, text=str(name), tbox_color=(100, 25, 50), left=x1, top=y1, bottom=x2, right=y2)
         cv2.imshow("Frame", frame)
-        if cv2.waitKey(0) & 0xFF == ord("q"):
+        if cv2.waitKey(1) & 0xFF == ord("q"):
             break
 
     cap.release()
