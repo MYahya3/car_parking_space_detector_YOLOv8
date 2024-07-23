@@ -17,7 +17,7 @@ with open(r'Space_ROIs', 'rb') as f:
     posList = pickle.load(f)
 
 # Capture from camera or video
-cap = cv2.VideoCapture("parking_space.mp4")  # Change to the appropriate source if not using a webcam
+cap = cv2.VideoCapture("input_video/parking_space.mp4")  # Change to the appropriate source if not using a webcam
 # get vcap property
 width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)  # float `width`
 height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  # float `height`
