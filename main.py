@@ -1,4 +1,7 @@
 import cv2
+import torch
+from utilis import YOLO_Detection
+from ultralytics import YOLO
 
 
 # Check if CUDA is available
@@ -17,3 +20,13 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
+    # Perform YOLO detection
+    boxes, classes, names = YOLO_Detection(model, frame)
+
+    # Collect points to determine if any detection is inside polygons
+    detection_points = []
+    for box in boxes:
+        x1, y1, x2, y2 = box
+        center_x = ((x1 + x2) / 2)
+        center_y = ((y1 + y2) / 2)
+        detection_points.append((int(center_x), int(center_y)))
