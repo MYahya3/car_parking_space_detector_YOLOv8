@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 # To make detections and get required outputs
 def YOLO_Detection(model, frame, conf=0.35):
